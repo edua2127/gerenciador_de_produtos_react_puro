@@ -1,0 +1,19 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "banana",
+      "descricao": "amarela, madura"
+    },
+    {
+      "id": 2,
+      "nome": "maça",
+      "descricao": "vermelha, madura"
+    },
+    {
+      "id": 3,
+      "nome": "abacaxi",
+      "descricao": "amarelo, maduro"
+    }
+  ]
+}
