@@ -1,11 +1,15 @@
 import React from "react";
 import NavBar from "../Components/NavBar";
+import style from "./Pages.module.css";
+import { useNavigate } from "react-router-dom";
+
 const Home = () => {
   return (
     <NavBar>
-      <h2>Buscar Produto</h2>
-      <input type="text" placeholder="digite o nome do produto" />
-      <button>Buscar</button>
+      <header>
+        <h1>Home</h1>
+      </header>
+      <main></main>
     </NavBar>
   );
 };

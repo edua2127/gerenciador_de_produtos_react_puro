@@ -2,20 +2,60 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { getProdutos } from "../hook/useProdutos";
 import style from "../pages/Pages.module.css";
+import NavBar from "../Components/NavBar";
+import { useNavigate } from "react-router-dom";
+import Pagination from "../Components/Pagination";
+const LIMIT = 3;
 const Produtos = () => {
   const [produtos, setProdutos] = useState([]);
+  const navigate = useNavigate();
+  const [name, setName] = React.useState("");
+  const [offset, setOffset] = React.useState(0);
+  const [total, setTotal] = React.useState(0);
 
   useEffect(() => {
-    getProdutos().then((response) => {
+    getProdutos(
+      `http://localhost:3000/produtos?_start=${offset}&_limit=${LIMIT}`
+    ).then((response) => {
       setProdutos(response);
+      console.log(response);
+    });
+  }, [offset]);
+
+  useEffect(() => {
+    getProdutos(`http://localhost:3000/produtos`).then((response) => {
+      setTotal(response.length);
     });
   }, []);
+
+  function buscaProduto() {
+    navigate("/produtos/search?nome=" + name);
+  }
   return (
-    <div>
+    <NavBar>
       <header>
         <h1>Produtos</h1>
       </header>
       <main>
+        <form className={style.formulario_de_busca}>
+          <label htmlFor="name" className={style.formulario_de_busca_label}>
+            <span>Nome do Produto</span>
+            <input
+              className={style.formulario_de_busca_input}
+              type="text"
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+          <button
+            className={style.formulario_de_busca_botao}
+            onClick={buscaProduto}
+          >
+            Buscar
+          </button>
+        </form>
         <table>
           <thead>
             <tr>
@@ -42,8 +82,14 @@ const Produtos = () => {
               })}
           </tbody>
         </table>
+        <Pagination
+          limit={LIMIT}
+          total={total}
+          offset={offset}
+          setOffset={setOffset}
+        />
       </main>
-    </div>
+    </NavBar>
   );
 };
 

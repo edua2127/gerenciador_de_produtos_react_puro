@@ -7,13 +7,68 @@
     },
     {
       "id": 2,
+      "nome": "banana maça",
+      "descricao": "bem doce"
+    },
+    {
+      "id": 3,
       "nome": "maça",
       "descricao": "vermelha, madura"
     },
     {
-      "id": 3,
+      "id": 4,
       "nome": "abacaxi",
       "descricao": "amarelo, maduro"
+    },
+    {
+      "id": 5,
+      "nome": "morango",
+      "descricao": "vermelho, maduro"
+    },
+    {
+      "id": 6,
+      "nome": "uva",
+      "descricao": "verde, madura"
+    },
+    {
+      "id": 7,
+      "nome": "laranja",
+      "descricao": "laranja, madura"
+    },
+    {
+      "id": 8,
+      "nome": "manga",
+      "descricao": "amarela, madura"
+    },
+    {
+      "id": 9,
+      "nome": "kiwi",
+      "descricao": "verde, maduro"
+    },
+    {
+      "id": 10,
+      "nome": "melancia",
+      "descricao": "vermelho, madura"
+    },
+    {
+      "id": 11,
+      "nome": "abacate",
+      "descricao": "verde, maduro"
+    },
+    {
+      "id": 12,
+      "nome": "cereja",
+      "descricao": "vermelho, madura"
+    },
+    {
+      "id": 13,
+      "nome": "tangerina",
+      "descricao": "laranja, madura"
+    },
+    {
+      "id": 14,
+      "nome": "ameixa",
+      "descricao": "vermelha, madura"
     }
   ]
 }
