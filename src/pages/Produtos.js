@@ -5,22 +5,22 @@ import style from "../pages/Pages.module.css";
 import NavBar from "../Components/NavBar";
 import { useNavigate } from "react-router-dom";
 import Pagination from "../Components/Pagination";
-const LIMIT = 3;
+const LIMIT = 1;
 const Produtos = () => {
   const [produtos, setProdutos] = useState([]);
   const navigate = useNavigate();
   const [name, setName] = React.useState("");
-  const [offset, setOffset] = React.useState(0);
+  const [starts, setStarts] = React.useState(0);
   const [total, setTotal] = React.useState(0);
 
   useEffect(() => {
     getProdutos(
-      `http://localhost:3000/produtos?_start=${offset}&_limit=${LIMIT}`
+      `http://localhost:3000/produtos?_start=${starts}&_limit=${LIMIT}`
     ).then((response) => {
       setProdutos(response);
       console.log(response);
     });
-  }, [offset]);
+  }, [starts]);
 
   useEffect(() => {
     getProdutos(`http://localhost:3000/produtos`).then((response) => {
@@ -83,10 +83,10 @@ const Produtos = () => {
           </tbody>
         </table>
         <Pagination
-          limit={LIMIT}
-          total={total}
-          offset={offset}
-          setOffset={setOffset}
+          quantidade_de_items_por_pagina={LIMIT}
+          total_de_items={total}
+          starts={starts}
+          setStarts={setStarts}
         />
       </main>
     </NavBar>

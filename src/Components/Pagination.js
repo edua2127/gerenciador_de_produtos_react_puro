@@ -1,34 +1,29 @@
 import React from "react";
-const MAX_ITEMS = 7;
-const MAX_LEFT = (MAX_ITEMS - 1) / 2;
-/*
-    limit: numero de items por pagina
-    total: numero total de items
-    offset: numero de items que devem ser pulados
-    MAX_ITEMS: numero maximo de icones de paginas que devem ser exibidas
-    MAX_LEFT: numero maximo de icones de paginas que devem ser exibidas a esquerda da pagina atual
-*/
-const Pagination = ({ limit, total, offset, setOffset }) => {
-  const paginaAtual = offset ? offset / limit + 1 : 1;
-  const numeroDePaginas = Math.ceil(total / limit);
-  const valorDoPrimeiroBotaoVisivel = Math.max(paginaAtual - MAX_LEFT, 1);
+import style from "./Pagination.module.css";
+function range(start, end) {
+  return Array(end - start + 1)
+    .fill()
+    .map((_, idx) => start + idx);
+}
 
+
+const Pagination = ({ quantidade_de_items_por_pagina, total_de_items, starts, setStarts }) => {
+  const quantidade_de_paginas = Math.ceil(total_de_items / quantidade_de_items_por_pagina);
+  const pagina_atual = starts / quantidade_de_items_por_pagina + 1;
+  const paginas_mostradas = range(pagina_atual - 2, pagina_atual + 2).filter(
+    (pagina) => pagina > 0 && pagina <= quantidade_de_paginas
+  );
   return (
-    <ul>
-      {Array.from({ length: Math.min(numeroDePaginas, MAX_ITEMS) }).map(
-        (_, index) => {
-          const valorDoBotaoAtual = valorDoPrimeiroBotaoVisivel + index;
-          return (
-            <li key={valorDoBotaoAtual}>
-              <button
-                onClick={() => setOffset((valorDoBotaoAtual - 1) * limit)}
-              >
-                {valorDoBotaoAtual}
-              </button>
-            </li>
-          );
-        }
-      )}
+    <ul className={style.botoes_paginacao}>
+      { paginas_mostradas.map((pagina) => {
+        return (
+          <li key={pagina}>
+            <button className={style.botao_da_pagina} onClick={() => setStarts((pagina - 1) * quantidade_de_items_por_pagina)}>
+              {pagina}
+            </button>
+          </li>
+        );
+      })}
     </ul>
   );
 };
