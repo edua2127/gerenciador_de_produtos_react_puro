@@ -1,18 +1,18 @@
 .botoes_paginacao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .botao_da_pagina {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 5px;
-    cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  cursor: pointer;
 }
