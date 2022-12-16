@@ -5,7 +5,7 @@ import style from "../pages/Pages.module.css";
 import NavBar from "../Components/NavBar";
 import { useNavigate } from "react-router-dom";
 import Pagination from "../Components/Pagination";
-const LIMIT = 1;
+const LIMIT = 4;
 const Produtos = () => {
   const [produtos, setProdutos] = useState([]);
   const navigate = useNavigate();

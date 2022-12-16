@@ -20,22 +20,22 @@ const Pagination = ({
     (pagina) => pagina > 0 && pagina <= quantidade_de_paginas
   );
   return (
-    <ul className={style.botoes_paginacao}>
+    <section className={style.botoes_paginacao}>
       {paginas_mostradas.map((pagina) => {
         return (
-          <li key={pagina}>
+          <aside key={pagina}>
             <button
-              className={style.botao_da_pagina}
+              className={pagina === pagina_atual ? style.botao_da_pagina_ativa : style.botao_das_outras_paginas}
               onClick={() =>
                 setStarts((pagina - 1) * quantidade_de_items_por_pagina)
               }
             >
               {pagina}
             </button>
-          </li>
+          </aside>
         );
       })}
-    </ul>
+    </section>
   );
 };
 
