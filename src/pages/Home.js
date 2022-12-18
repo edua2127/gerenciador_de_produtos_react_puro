@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../Components/NavBar";
-import style from "./Pages.module.css";
-import { useNavigate } from "react-router-dom";
-
+import { useTituloContext } from "../hook/useTituloContext";
 const Home = () => {
+  const { color, dispatch } = useTituloContext();
+
+
+  useEffect(() => {
+    dispatch({type: "ALTERAR_COR", payload: "blue"})
+  }, [dispatch])
+
   return (
     <NavBar>
       <header>
-        <h1>Home</h1>
+        <h1 style={{ color: color }}>Home</h1>
       </header>
       <main></main>
     </NavBar>

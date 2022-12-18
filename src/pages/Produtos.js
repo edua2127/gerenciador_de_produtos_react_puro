@@ -1,35 +1,41 @@
 import React, { useEffect } from "react";
-import { useState } from "react";
 import { getProdutos } from "../hook/useProdutos";
 import style from "../pages/Pages.module.css";
 import NavBar from "../Components/NavBar";
 import { useNavigate } from "react-router-dom";
 import Pagination from "../Components/Pagination";
+import { useProdutoContext } from "../hook/useProdutoContext";
 const LIMIT = 4;
 const Produtos = () => {
-  const [produtos, setProdutos] = useState([]);
   const navigate = useNavigate();
-  const [name, setName] = React.useState("");
-  const [starts, setStarts] = React.useState(0);
-  const [total, setTotal] = React.useState(0);
+  const {
+    listaDeProdutos,
+    setListaDeProdutos,
+    nomeDoProdutoPesquisado,
+    setNomeDoProdutoPesquisado,
+    totalDeItems,
+    setTotalDeItems,
+    listaComecaCom,
+    setListaComecaCom,
+  } = useProdutoContext();
 
   useEffect(() => {
     getProdutos(
-      `http://localhost:3000/produtos?_start=${starts}&_limit=${LIMIT}`
+      `http://localhost:3000/produtos?_start=${listaComecaCom}&_limit=${LIMIT}`
     ).then((response) => {
-      setProdutos(response);
+      setListaDeProdutos(response);
       console.log(response);
     });
-  }, [starts]);
+  }, [listaComecaCom, setListaDeProdutos]);
 
   useEffect(() => {
     getProdutos(`http://localhost:3000/produtos`).then((response) => {
-      setTotal(response.length);
+      setTotalDeItems(response.length);
     });
-  }, []);
+  }, [setTotalDeItems]);
 
   function buscaProduto() {
-    navigate("/produtos/search?nome=" + name);
+    navigate("/produtos/search?nome=" + nomeDoProdutoPesquisado);
   }
   return (
     <NavBar>
@@ -45,8 +51,8 @@ const Produtos = () => {
               type="text"
               id="name"
               name="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              value={nomeDoProdutoPesquisado}
+              onChange={(e) => setNomeDoProdutoPesquisado(e.target.value)}
             />
           </label>
           <button
@@ -66,8 +72,8 @@ const Produtos = () => {
             </tr>
           </thead>
           <tbody>
-            {produtos.length > 0 &&
-              produtos.map((produto) => {
+            {listaDeProdutos.length > 0 &&
+              listaDeProdutos.map((produto) => {
                 return (
                   <tr key={produto.id}>
                     <td>{produto.id}</td>
@@ -84,9 +90,9 @@ const Produtos = () => {
         </table>
         <Pagination
           quantidade_de_items_por_pagina={LIMIT}
-          total_de_items={total}
-          starts={starts}
-          setStarts={setStarts}
+          total_de_items={totalDeItems}
+          starts={listaComecaCom}
+          setStarts={setListaComecaCom}
         />
       </main>
     </NavBar>

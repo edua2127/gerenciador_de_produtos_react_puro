@@ -69,6 +69,121 @@
       "id": 14,
       "nome": "ameixa",
       "descricao": "vermelha, madura"
+    },
+    {
+      "id": 15,
+      "nome": "bife",
+      "descricao": "carne de vaca"
+    },
+    {
+      "id": 16,
+      "nome": "escova de dente",
+      "descricao": "azul"
+    },
+    {
+      "id": 17,
+      "nome": "celular",
+      "descricao": "telefone da apple"
+    },
+    {
+      "id": 19,
+      "nome": "Pneu",
+      "descricao": "Pneu para veículos"
+    },
+    {
+      "id": 20,
+      "nome": "Óleo",
+      "descricao": "Óleo para veículos"
+    },
+    {
+      "id": 21,
+      "nome": "Bateria",
+      "descricao": "Bateria para veículos"
+    },
+    {
+      "id": 22,
+      "nome": "Filtro de ar",
+      "descricao": "Filtro de ar para veículos"
+    },
+    {
+      "id": 23,
+      "nome": "Filtro de óleo",
+      "descricao": "Filtro de óleo para veículos"
+    },
+    {
+      "id": 24,
+      "nome": "Velas de ignição",
+      "descricao": "Velas de ignição para veículos"
+    },
+    {
+      "id": 25,
+      "nome": "Câmbio",
+      "descricao": "Peças de câmbio para veículos"
+    },
+    {
+      "id": 26,
+      "nome": "Radiador",
+      "descricao": "Radiador para veículos"
+    },
+    {
+      "id": 27,
+      "nome": "Trava elétrica",
+      "descricao": "Trava elétrica para veículos"
+    },
+    {
+      "id": 28,
+      "nome": "Escape",
+      "descricao": "Escape para veículos"
+    },
+    {
+      "id": 29,
+      "nome": "iPhone 11 Pro Max",
+      "descricao": "O iPhone 11 Pro Max é o smartphone da Apple com tela Super Retina XDR de 6,5 polegadas, três câmeras traseiras de 12 MP e processador A13 Bionic."
+    },
+    {
+      "id": 30,
+      "nome": "Samsung Galaxy S20 Ultra",
+      "descricao": "O Samsung Galaxy S20 Ultra é o smartphone top de linha da fabricante coreana. Possui tela de 6,9 polegadas, câmera traseira de 108 MP e processador Exynos 990."
+    },
+    {
+      "id": 31,
+      "nome": "Huawei P40 Pro",
+      "descricao": "O Huawei P40 Pro é o smartphone top de linha da fabricante chinesa. Possui tela de 6,58 polegadas, câmera traseira de 5 câmeras de 50 MP e processador Kirin 990 5G."
+    },
+    {
+      "id": 32,
+      "nome": "Motorola Moto G8 Plus",
+      "descricao": "O Motorola Moto G8 Plus é um smartphone intermediário da fabricante brasileira. Possui tela de 6,3 polegadas, câmera traseira de 48 MP e processador Snapdragon 665."
+    },
+    {
+      "id": 33,
+      "nome": "Xiaomi Redmi Note 8 Pro",
+      "descricao": "O Xiaomi Redmi Note 8 Pro é um smartphone intermediário da fabricante chinesa. Possui tela de 6,53 polegadas, câmera traseira de quatro câmeras de 64 MP e processador MediaTek Helio G90T."
+    },
+    {
+      "id": 34,
+      "nome": "LG K50S",
+      "descricao": "O LG K50S é um smartphone intermediário da fabricante sul-coreana. Possui tela de 6,5 polegadas, câmera traseira de 13 MP e processador MediaTek Helio P22."
+    },
+    {
+      "id": 35,
+      "nome": "Nokia 5.3",
+      "descricao": "O Nokia 5.3 é um smartphone intermediário da fabricante finlandesa. Possui tela de 6,55 polegadas, câmera traseira de quatro câmeras de 13 MP e processador Snapdragon 665."
+    },
+    {
+      "id": 36,
+      "nome": "Asus Zenfone 6",
+      "descricao": "O Asus Zenfone 6 é um smartphone intermediário da fabricante taiwanesa. Possui tela de 6,4 polegadas, câmera traseira de 48 MP e processador Snapdragon 855."
+    },
+    {
+      "id": 37,
+      "nome": "Sony Xperia 1 II",
+      "descricao": "O Sony Xperia 1 II é o smartphone top de linha da fabricante japonesa. Possui tela de 6,5 polegadas, câmera traseira de três câmeras de 12 MP e processador Snapdragon 865."
+    },
+    {
+      "id": 38,
+      "nome": "Google Pixel 4A",
+      "descricao": "O Google Pixel 4A é o smartphone intermediário da fabricante americana. Possui tela de 5,81 polegadas, câmera traseira de 12,2 MP e processador Snapdragon 730."
     }
   ]
 }

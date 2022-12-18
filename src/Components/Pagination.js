@@ -25,7 +25,11 @@ const Pagination = ({
         return (
           <aside key={pagina}>
             <button
-              className={pagina === pagina_atual ? style.botao_da_pagina_ativa : style.botao_das_outras_paginas}
+              className={
+                pagina === pagina_atual
+                  ? style.botao_da_pagina_ativa
+                  : style.botao_das_outras_paginas
+              }
               onClick={() =>
                 setStarts((pagina - 1) * quantidade_de_items_por_pagina)
               }

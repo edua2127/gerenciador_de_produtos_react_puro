@@ -4,10 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import { ProdutoContextProvider } from "./context/ProdutoContext";
+import { TituloContextProvider } from "./context/TituloContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ProdutoContextProvider>
+      <TituloContextProvider>
+        <App />
+      </TituloContextProvider>
+    </ProdutoContextProvider>
   </React.StrictMode>
 );
 
