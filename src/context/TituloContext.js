@@ -1,6 +1,7 @@
 import { createContext, useReducer } from "react";
 
 export const TituloContext = createContext();
+
 export const corDoTituloReducer = (state, action) => {
   switch(action.type) {
     case "ALTERAR_COR":
@@ -9,6 +10,7 @@ export const corDoTituloReducer = (state, action) => {
       return state;
   }
 };
+
 export const TituloContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(corDoTituloReducer, { color: "red" });
   return (
